@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 
 //DTO para requisições não contem id
 public class ProdutoReq {
-    //variaeis e validações(db) da entidade
+    //variaveis e validações(db) da entidade
 
     @NotNull
     private String nome;

@@ -1,5 +1,6 @@
 package com.biolab.loja.entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -9,23 +10,49 @@ public class Produtos {
     //definindo id e tipo de geração
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Define o que vai ta escrito no campo do swagger
+    @Schema(
+            description = "ID o prod",
+            example = "1"
+    )
     private long id;
 
     //variaveis e alidação not null
     @NotNull
+    @Schema(
+            description = "nome do produto",
+            example = "Notebook Gamer"
+    )
     private String nome;
 
     @NotNull
+    @Schema(
+            description = "Descrição do produto",
+            example = "16gb ram 4050ti led rgb"
+    )
     private String descricao;
 
     @NotNull
+    @Schema(
+            description = "Preço do produto",
+            example = "450.99"
+
+    )
     private double preco;
 
     @NotNull
+    @Schema(
+            description = "Quantidade em estoque",
+            example = "10"
+    )
     private int estoque;
 
     //variavel enum e especificação enum
     @Enumerated(EnumType.STRING)
+    @Schema(
+            description = "Categoria do produto(ENUM)",
+            example="ELETRONICOS"
+    )
     private Categoria categoria;
 
 //construtores
